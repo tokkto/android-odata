@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".mdui.businesspartner.BusinessPartnerActivity">
+    <data>
+        <import type = "com.sap.cloud.android.odata.foninez.BusinessPartnerType" />
+        <variable name="businessPartnerType" type="BusinessPartnerType"/>
+        <variable name="handler" type="com.colusbisd.fonninez.mdui.businesspartner.BusinessPartnerDetailFragment" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="BusinessPartnerID"
+            app:valueText="@{businessPartnerType.getOptionalValue(BusinessPartnerType.businessPartnerID).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="CodigoBPCRM"
+            app:valueText="@{businessPartnerType.getOptionalValue(BusinessPartnerType.codigoBPCRM).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="NombreBP"
+            app:valueText="@{businessPartnerType.getOptionalValue(BusinessPartnerType.nombreBP).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="NumDocumento"
+            app:valueText="@{businessPartnerType.getOptionalValue(BusinessPartnerType.numDocumento).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Direccion"
+            app:valueText="@{businessPartnerType.getOptionalValue(BusinessPartnerType.direccion).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Grupo"
+            app:valueText="@{businessPartnerType.getOptionalValue(BusinessPartnerType.grupo).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="FlagNuevo"
+            app:valueText="@{businessPartnerType.getOptionalValue(BusinessPartnerType.flagNuevo).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Status"
+            app:valueText="@{businessPartnerType.getOptionalValue(BusinessPartnerType.status).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="FechaIngreso"
+            app:valueText="@{businessPartnerType.getOptionalValue(BusinessPartnerType.fechaIngreso).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="FechaRetiro"
+            app:valueText="@{businessPartnerType.getOptionalValue(BusinessPartnerType.fechaRetiro).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="FechaCreacion"
+            app:valueText="@{businessPartnerType.getOptionalValue(BusinessPartnerType.fechaCreacion).toString()}" />
+
+    </LinearLayout>
+</layout>

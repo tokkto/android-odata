@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".mdui.programa.ProgramaActivity">
+    <data>
+        <import type = "com.sap.cloud.android.odata.foninez.ProgramaType" />
+        <variable name="programaType" type="ProgramaType"/>
+        <variable name="handler" type="com.colusbisd.fonninez.mdui.programa.ProgramaDetailFragment" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="ProgramaID"
+            app:valueText="@{programaType.getOptionalValue(ProgramaType.programaID).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="ProgramaDesc"
+            app:valueText="@{programaType.getOptionalValue(ProgramaType.programaDesc).toString()}" />
+
+    </LinearLayout>
+</layout>

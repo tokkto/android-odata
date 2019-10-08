@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="2.0">
+        <Schema Namespace="FONINEZ_DEV.foninez" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="ProgramaType">
+                <Key>
+                    <PropertyRef Name="ProgramaID"/>
+                </Key>
+                <Property Name="ProgramaID" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="ProgramaDesc" Type="Edm.String" MaxLength="100"/>
+            </EntityType>
+            <EntityType Name="AcuerdoType">
+                <Key>
+                    <PropertyRef Name="AcuerdoID"/>
+                </Key>
+                <Property Name="AcuerdoID" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="CodigoAcuerdoCRM" Type="Edm.String" MaxLength="10"/>
+                <Property Name="ProgramaID" Type="Edm.String" MaxLength="3"/>
+                <Property Name="AcuerdoNro" Type="Edm.String" MaxLength="10"/>
+                <Property Name="Status" Type="Edm.String" MaxLength="2"/>
+                <Property Name="Denominacion" Type="Edm.String" MaxLength="100"/>
+                <Property Name="TipoAcuerdo" Type="Edm.String" MaxLength="100"/>
+                <Property Name="Localizacion" Type="Edm.String" MaxLength="100"/>
+                <Property Name="FechaCreacion" Type="Edm.DateTime"/>
+                <NavigationProperty Name="Operacion" Relationship="FONINEZ_DEV.foninez.OPERACION__ACUERDOType" FromRole="AcuerdoPrincipal" ToRole="OperacionDependent"/>
+            </EntityType>
+            <EntityType Name="OperacionType">
+                <Key>
+                    <PropertyRef Name="OperacionID"/>
+                </Key>
+                <Property Name="OperacionID" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="CodigoOperacionCRM" Type="Edm.String" MaxLength="10"/>
+                <Property Name="AcuerdoID" Type="Edm.String" MaxLength="10"/>
+                <Property Name="MediadorID" Type="Edm.String" MaxLength="10"/>
+                <Property Name="LugarServicioID" Type="Edm.String" MaxLength="5"/>
+                <Property Name="Modalidad" Type="Edm.String" MaxLength="100"/>
+                <Property Name="Entorno" Type="Edm.String" MaxLength="100"/>
+                <Property Name="Status" Type="Edm.String" MaxLength="2"/>
+                <Property Name="Grupo" Type="Edm.String" MaxLength="100"/>
+                <Property Name="JornadaServicio" Type="Edm.String" MaxLength="60"/>
+                <Property Name="FechaInicial" Type="Edm.String" MaxLength="10"/>
+                <Property Name="FechaFinal" Type="Edm.String" MaxLength="10"/>
+                <Property Name="HorasxDias" Type="Edm.Decimal" Precision="3" Scale="1"/>
+                <Property Name="FechaCreacion" Type="Edm.DateTime"/>
+                <NavigationProperty Name="SesionProgramada" Relationship="FONINEZ_DEV.foninez.SESIONPROGRAMADA__OPERACIONType" FromRole="OperacionPrincipal" ToRole="SesionProgramadaDependent"/>
+            </EntityType>
+            <EntityType Name="SesionProgramadaType">
+                <Key>
+                    <PropertyRef Name="SesionID"/>
+                </Key>
+                <Property Name="SesionID" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="OperacionID" Type="Edm.String" MaxLength="10"/>
+                <Property Name="MediadorID" Type="Edm.String" MaxLength="10"/>
+                <Property Name="Status" Type="Edm.String" MaxLength="2"/>
+                <Property Name="FechaSesion" Type="Edm.String" MaxLength="10"/>
+                <Property Name="HoraInicial" Type="Edm.String" MaxLength="8"/>
+                <Property Name="HoraFinal" Type="Edm.String" MaxLength="8"/>
+                <Property Name="FechaCreacion" Type="Edm.DateTime"/>
+                <NavigationProperty Name="Asistencia" Relationship="FONINEZ_DEV.foninez.ASISTENCIA__SESIONPROGRAMADAType" FromRole="SesionProgramadaPrincipal" ToRole="AsistenciaDependent"/>
+            </EntityType>
+            <EntityType Name="AsistenciaType">
+                <Key>
+                    <PropertyRef Name="AsistenciaID"/>
+                </Key>
+                <Property Name="AsistenciaID" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="SesionID" Type="Edm.String" MaxLength="10"/>
+                <Property Name="CodigoAcuerdoCRM" Type="Edm.String" MaxLength="10"/>
+                <Property Name="CodigoOperacionCRM" Type="Edm.String" MaxLength="10"/>
+                <Property Name="CodigoBPCRM" Type="Edm.String" MaxLength="10"/>
+                <Property Name="AlumnoID" Type="Edm.String" MaxLength="10"/>
+                <Property Name="MotivoID" Type="Edm.String" MaxLength="4"/>
+                <Property Name="FlagAsistencia" Type="Edm.String" MaxLength="1"/>
+                <Property Name="FlagComplemento" Type="Edm.String" MaxLength="1"/>
+                <Property Name="FlagNuevo" Type="Edm.String" MaxLength="1"/>
+                <Property Name="Validado" Type="Edm.String" MaxLength="1"/>
+                <Property Name="FechaCreacion" Type="Edm.DateTime"/>
+            </EntityType>
+            <EntityType Name="BusinessPartnerType">
+                <Key>
+                    <PropertyRef Name="BusinessPartnerID"/>
+                </Key>
+                <Property Name="BusinessPartnerID" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="CodigoBPCRM" Type="Edm.String" MaxLength="10"/>
+                <Property Name="NombreBP" Type="Edm.String" MaxLength="100"/>
+                <Property Name="NumDocumento" Type="Edm.String" MaxLength="10"/>
+                <Property Name="Direccion" Type="Edm.String" MaxLength="100"/>
+                <Property Name="Grupo" Type="Edm.String" MaxLength="60"/>
+                <Property Name="FlagNuevo" Type="Edm.String" MaxLength="1"/>
+                <Property Name="Status" Type="Edm.String" MaxLength="2"/>
+                <Property Name="FechaIngreso" Type="Edm.String" MaxLength="8"/>
+                <Property Name="FechaRetiro" Type="Edm.String" MaxLength="8"/>
+                <Property Name="FechaCreacion" Type="Edm.DateTime"/>
+            </EntityType>
+            <EntityType Name="MediadorType">
+                <Key>
+                    <PropertyRef Name="MediadorID"/>
+                </Key>
+                <Property Name="MediadorID" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Nombre" Type="Edm.String" MaxLength="100"/>
+                <Property Name="NumDocumento" Type="Edm.String" MaxLength="10"/>
+                <Property Name="Direccion" Type="Edm.String" MaxLength="100"/>
+                <Property Name="Tipo" Type="Edm.String" MaxLength="60"/>
+                <Property Name="Zona" Type="Edm.String" MaxLength="100"/>
+                <Property Name="FechaCreacion" Type="Edm.DateTime"/>
+            </EntityType>
+            <EntityType Name="MotivoType">
+                <Key>
+                    <PropertyRef Name="MotivoID"/>
+                </Key>
+                <Property Name="MotivoID" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="MotivoDesc" Type="Edm.String" MaxLength="100"/>
+            </EntityType>
+            <Association Name="OPERACION__ACUERDOType">
+                <End Type="FONINEZ_DEV.foninez.AcuerdoType" Role="AcuerdoPrincipal" Multiplicity="1"/>
+                <End Type="FONINEZ_DEV.foninez.OperacionType" Role="OperacionDependent" Multiplicity="*"/>
+            </Association>
+            <Association Name="SESIONPROGRAMADA__OPERACIONType">
+                <End Type="FONINEZ_DEV.foninez.OperacionType" Role="OperacionPrincipal" Multiplicity="1"/>
+                <End Type="FONINEZ_DEV.foninez.SesionProgramadaType" Role="SesionProgramadaDependent" Multiplicity="*"/>
+            </Association>
+            <Association Name="ASISTENCIA__SESIONPROGRAMADAType">
+                <End Type="FONINEZ_DEV.foninez.SesionProgramadaType" Role="SesionProgramadaPrincipal" Multiplicity="1"/>
+                <End Type="FONINEZ_DEV.foninez.AsistenciaType" Role="AsistenciaDependent" Multiplicity="*"/>
+            </Association>
+            <EntityContainer Name="foninez" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="Programa" EntityType="FONINEZ_DEV.foninez.ProgramaType"/>
+                <EntitySet Name="Acuerdo" EntityType="FONINEZ_DEV.foninez.AcuerdoType"/>
+                <EntitySet Name="Operacion" EntityType="FONINEZ_DEV.foninez.OperacionType"/>
+                <EntitySet Name="SesionProgramada" EntityType="FONINEZ_DEV.foninez.SesionProgramadaType"/>
+                <EntitySet Name="Asistencia" EntityType="FONINEZ_DEV.foninez.AsistenciaType"/>
+                <EntitySet Name="BusinessPartner" EntityType="FONINEZ_DEV.foninez.BusinessPartnerType"/>
+                <EntitySet Name="Mediador" EntityType="FONINEZ_DEV.foninez.MediadorType"/>
+                <EntitySet Name="Motivo" EntityType="FONINEZ_DEV.foninez.MotivoType"/>
+                <AssociationSet Name="OPERACION__ACUERDO" Association="FONINEZ_DEV.foninez.OPERACION__ACUERDOType">
+                    <End Role="AcuerdoPrincipal" EntitySet="Acuerdo"/>
+                    <End Role="OperacionDependent" EntitySet="Operacion"/>
+                </AssociationSet>
+                <AssociationSet Name="SESIONPROGRAMADA__OPERACION" Association="FONINEZ_DEV.foninez.SESIONPROGRAMADA__OPERACIONType">
+                    <End Role="OperacionPrincipal" EntitySet="Operacion"/>
+                    <End Role="SesionProgramadaDependent" EntitySet="SesionProgramada"/>
+                </AssociationSet>
+                <AssociationSet Name="ASISTENCIA__SESIONPROGRAMADA" Association="FONINEZ_DEV.foninez.ASISTENCIA__SESIONPROGRAMADAType">
+                    <End Role="SesionProgramadaPrincipal" EntitySet="SesionProgramada"/>
+                    <End Role="AsistenciaDependent" EntitySet="Asistencia"/>
+                </AssociationSet>
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".mdui.sesionprogramada.SesionProgramadaActivity">
+    <data>
+        <import type = "com.sap.cloud.android.odata.foninez.SesionProgramadaType" />
+        <variable name="sesionProgramadaType" type="SesionProgramadaType"/>
+        <variable name="handler" type="com.colusbisd.fonninez.mdui.sesionprogramada.SesionProgramadaDetailFragment" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="SesionID"
+            app:valueText="@{sesionProgramadaType.getOptionalValue(SesionProgramadaType.sesionID).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="OperacionID"
+            app:valueText="@{sesionProgramadaType.getOptionalValue(SesionProgramadaType.operacionID).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="MediadorID"
+            app:valueText="@{sesionProgramadaType.getOptionalValue(SesionProgramadaType.mediadorID).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Status"
+            app:valueText="@{sesionProgramadaType.getOptionalValue(SesionProgramadaType.status).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="FechaSesion"
+            app:valueText="@{sesionProgramadaType.getOptionalValue(SesionProgramadaType.fechaSesion).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="HoraInicial"
+            app:valueText="@{sesionProgramadaType.getOptionalValue(SesionProgramadaType.horaInicial).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="HoraFinal"
+            app:valueText="@{sesionProgramadaType.getOptionalValue(SesionProgramadaType.horaFinal).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="FechaCreacion"
+            app:valueText="@{sesionProgramadaType.getOptionalValue(SesionProgramadaType.fechaCreacion).toString()}" />
+
+        <RelativeLayout
+            style="@style/FioriButton.Flat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:onClick="@{handler::onNavigationClickedToAsistencia_Asistencia}"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/link_label_to_asistencia"
+                style="@style/FioriButton.Flat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:clickable="false"
+                android:focusable="false"
+                android:paddingLeft="16dp"
+                android:text="Asistencia" />
+
+            <Button
+                android:id="@+id/link_button_to_asistencia"
+                style="@style/FioriButton.Flat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:clickable="false"
+                android:drawableStart="@drawable/ic_arrow_forward_black_24dp"
+                android:enabled="true"
+                android:focusable="false" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

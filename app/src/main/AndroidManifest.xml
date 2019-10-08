@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.colusbisd.fonninez" >
+
+    <application
+        android:name=".app.SAPWizardApplication"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/application_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".logon.LogonActivity"
+            android:label="@string/application_name"
+            android:theme="@style/splashScreenTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".mdui.EntitySetListActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/application_name"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name="com.sap.cloud.mobile.onboarding.launchscreen.LaunchScreenActivity"
+            android:label="@string/application_name" >
+            <meta-data
+                android:name="action_handler"
+                android:value="com.colusbisd.fonninez.logon.LaunchScreenActionHandlerImpl" />
+        </activity>
+        <activity
+            android:name=".mdui.acuerdo.AcuerdoActivity"
+            android:label="@string/application_name"
+            android:launchMode="singleTop"
+            android:parentActivityName=".mdui.EntitySetListActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".mdui.EntitySetListActivity" />
+        </activity>
+        <activity
+            android:name=".mdui.asistencia.AsistenciaActivity"
+            android:label="@string/application_name"
+            android:launchMode="singleTop"
+            android:parentActivityName=".mdui.EntitySetListActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".mdui.EntitySetListActivity" />
+        </activity>
+        <activity
+            android:name=".mdui.businesspartner.BusinessPartnerActivity"
+            android:label="@string/application_name"
+            android:launchMode="singleTop"
+            android:parentActivityName=".mdui.EntitySetListActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".mdui.EntitySetListActivity" />
+        </activity>
+        <activity
+            android:name=".mdui.mediador.MediadorActivity"
+            android:label="@string/application_name"
+            android:launchMode="singleTop"
+            android:parentActivityName=".mdui.EntitySetListActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".mdui.EntitySetListActivity" />
+        </activity>
+        <activity
+            android:name=".mdui.motivo.MotivoActivity"
+            android:label="@string/application_name"
+            android:launchMode="singleTop"
+            android:parentActivityName=".mdui.EntitySetListActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".mdui.EntitySetListActivity" />
+        </activity>
+        <activity
+            android:name=".mdui.operacion.OperacionActivity"
+            android:label="@string/application_name"
+            android:launchMode="singleTop"
+            android:parentActivityName=".mdui.EntitySetListActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".mdui.EntitySetListActivity" />
+        </activity>
+        <activity
+            android:name=".mdui.programa.ProgramaActivity"
+            android:label="@string/application_name"
+            android:launchMode="singleTop"
+            android:parentActivityName=".mdui.EntitySetListActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".mdui.EntitySetListActivity" />
+        </activity>
+        <activity
+            android:name=".mdui.sesionprogramada.SesionProgramadaActivity"
+            android:label="@string/application_name"
+            android:launchMode="singleTop"
+            android:parentActivityName=".mdui.EntitySetListActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".mdui.EntitySetListActivity" />
+        </activity>
+        <activity
+            android:name=".mdui.SettingsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/settings_activity_name"
+            android:launchMode="singleTop"
+            android:parentActivityName=".mdui.EntitySetListActivity"
+            android:screenOrientation="sensor" >
+        </activity>
+        <activity
+            android:name="com.sap.cloud.mobile.onboarding.passcode.SetPasscodeActivity"
+            android:label="@string/application_name"
+            android:parentActivityName=".logon.LogonActivity" >
+            <meta-data
+                android:name="action_handler"
+                android:value="com.colusbisd.fonninez.logon.PasscodeActionHandlerImpl" />
+            <meta-data
+                android:name="validation_action_handler"
+                android:value="com.colusbisd.fonninez.logon.PasscodeValidationActionHandler" />
+        </activity>
+        <activity
+            android:name="com.sap.cloud.mobile.onboarding.passcode.ConfirmPasscodeActivity"
+            android:label="@string/application_name"
+            android:parentActivityName=".logon.LogonActivity" >
+            <meta-data
+                android:name="action_handler"
+                android:value="com.colusbisd.fonninez.logon.PasscodeActionHandlerImpl" />
+            <meta-data
+                android:name="validation_action_handler"
+                android:value="com.colusbisd.fonninez.logon.PasscodeValidationActionHandler" />
+        </activity>
+        <activity
+            android:name="com.sap.cloud.mobile.onboarding.passcode.EnterPasscodeActivity"
+            android:label="@string/application_name"
+            android:parentActivityName=".logon.LogonActivity" >
+            <meta-data
+                android:name="action_handler"
+                android:value="com.colusbisd.fonninez.logon.PasscodeActionHandlerImpl" />
+            <meta-data
+                android:name="validation_action_handler"
+                android:value="com.colusbisd.fonninez.logon.PasscodeValidationActionHandler" />
+        </activity>
+        <activity
+            android:name="com.sap.cloud.mobile.onboarding.fingerprint.FingerprintActivity"
+            android:label="@string/application_name" >
+            <meta-data
+                android:name="action_handler"
+                android:value="com.colusbisd.fonninez.logon.FingerprintActionHandlerImpl" />
+        </activity>
+        <activity
+            android:name="com.sap.cloud.mobile.onboarding.fingerprint.FingerprintErrorActivity"
+            android:label="@string/application_name" >
+            <meta-data
+                android:name="action_handler"
+                android:value="com.colusbisd.fonninez.logon.FingerprintActionHandlerImpl" />
+        </activity>
+        <activity android:name=".logon.UnlockActivity" >
+        </activity>
+        <activity
+            android:name="com.sap.cloud.mobile.onboarding.passcode.ChangePasscodeActivity"
+            android:label="@string/application_name" >
+            <meta-data
+                android:name="action_handler"
+                android:value="com.colusbisd.fonninez.logon.PasscodeActionHandlerImpl" />
+            <meta-data
+                android:name="validation_action_handler"
+                android:value="com.colusbisd.fonninez.logon.PasscodeValidationActionHandlerImpl" />
+        </activity>
+        <activity
+            android:name=".app.ErrorNotificationDialog"
+            android:theme="@style/AppTheme.Transparent" >
+        </activity>
+        <activity
+            android:name=".app.ResetApplicationActivity"
+            android:theme="@style/AppTheme.Transparent" >
+        </activity>
+        <activity
+            android:name=".logon.AskUsagePermissionActivity"
+            android:label="@string/get_usage_permission_activity_name"
+            android:screenOrientation="sensor"
+            android:theme="@style/Onboarding.Default.Light.Theme" >
+        </activity>
+
+        <meta-data
+            android:name="android.content.APP_RESTRICTIONS"
+            android:resource="@xml/app_restrictions" />
+    </application>
+
+</manifest>

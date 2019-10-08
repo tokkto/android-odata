@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".mdui.asistencia.AsistenciaActivity">
+    <data>
+        <import type = "com.sap.cloud.android.odata.foninez.AsistenciaType" />
+        <variable name="asistenciaType" type="AsistenciaType"/>
+        <variable name="handler" type="com.colusbisd.fonninez.mdui.asistencia.AsistenciaDetailFragment" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/item_detail_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:keyText="AsistenciaID"
+                        app:valueText="@{asistenciaType.getOptionalValue(AsistenciaType.asistenciaID).toString()}" />
+
+                    <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:keyText="SesionID"
+                        app:valueText="@{asistenciaType.getOptionalValue(AsistenciaType.sesionID).toString()}" />
+
+                    <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:keyText="CodigoAcuerdoCRM"
+                        app:valueText="@{asistenciaType.getOptionalValue(AsistenciaType.codigoAcuerdoCRM).toString()}" />
+
+                    <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:keyText="CodigoOperacionCRM"
+                        app:valueText="@{asistenciaType.getOptionalValue(AsistenciaType.codigoOperacionCRM).toString()}" />
+
+                    <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:keyText="CodigoBPCRM"
+                        app:valueText="@{asistenciaType.getOptionalValue(AsistenciaType.codigoBPCRM).toString()}" />
+
+                    <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:keyText="AlumnoID"
+                        app:valueText="@{asistenciaType.getOptionalValue(AsistenciaType.alumnoID).toString()}" />
+
+                    <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:keyText="MotivoID"
+                        app:valueText="@{asistenciaType.getOptionalValue(AsistenciaType.motivoID).toString()}" />
+
+                    <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:keyText="FlagAsistencia"
+                        app:valueText="@{asistenciaType.getOptionalValue(AsistenciaType.flagAsistencia).toString()}" />
+
+                    <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:keyText="FlagComplemento"
+                        app:valueText="@{asistenciaType.getOptionalValue(AsistenciaType.flagComplemento).toString()}" />
+
+                    <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:keyText="FlagNuevo"
+                        app:valueText="@{asistenciaType.getOptionalValue(AsistenciaType.flagNuevo).toString()}" />
+
+                    <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:keyText="Validado"
+                        app:valueText="@{asistenciaType.getOptionalValue(AsistenciaType.validado).toString()}" />
+
+                    <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:keyText="FechaCreacion"
+                        app:valueText="@{asistenciaType.getOptionalValue(AsistenciaType.fechaCreacion).toString()}" />
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </LinearLayout>
+</layout>

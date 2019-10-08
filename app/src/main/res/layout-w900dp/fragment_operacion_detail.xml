@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".mdui.operacion.OperacionActivity">
+    <data>
+        <import type = "com.sap.cloud.android.odata.foninez.OperacionType" />
+        <variable name="operacionType" type="OperacionType"/>
+        <variable name="handler" type="com.colusbisd.fonninez.mdui.operacion.OperacionDetailFragment" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="OperacionID"
+            app:valueText="@{operacionType.getOptionalValue(OperacionType.operacionID).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="CodigoOperacionCRM"
+            app:valueText="@{operacionType.getOptionalValue(OperacionType.codigoOperacionCRM).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="AcuerdoID"
+            app:valueText="@{operacionType.getOptionalValue(OperacionType.acuerdoID).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="MediadorID"
+            app:valueText="@{operacionType.getOptionalValue(OperacionType.mediadorID).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="LugarServicioID"
+            app:valueText="@{operacionType.getOptionalValue(OperacionType.lugarServicioID).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Modalidad"
+            app:valueText="@{operacionType.getOptionalValue(OperacionType.modalidad).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Entorno"
+            app:valueText="@{operacionType.getOptionalValue(OperacionType.entorno).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Status"
+            app:valueText="@{operacionType.getOptionalValue(OperacionType.status).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Grupo"
+            app:valueText="@{operacionType.getOptionalValue(OperacionType.grupo).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="JornadaServicio"
+            app:valueText="@{operacionType.getOptionalValue(OperacionType.jornadaServicio).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="FechaInicial"
+            app:valueText="@{operacionType.getOptionalValue(OperacionType.fechaInicial).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="FechaFinal"
+            app:valueText="@{operacionType.getOptionalValue(OperacionType.fechaFinal).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="HorasxDias"
+            app:valueText="@{operacionType.getOptionalValue(OperacionType.horasxDias).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="FechaCreacion"
+            app:valueText="@{operacionType.getOptionalValue(OperacionType.fechaCreacion).toString()}" />
+
+        <RelativeLayout
+            style="@style/FioriButton.Flat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:onClick="@{handler::onNavigationClickedToSesionProgramada_SesionProgramada}"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/link_label_to_sesionprogramada"
+                style="@style/FioriButton.Flat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:clickable="false"
+                android:focusable="false"
+                android:paddingLeft="16dp"
+                android:text="SesionProgramada" />
+
+            <Button
+                android:id="@+id/link_button_to_sesionprogramada"
+                style="@style/FioriButton.Flat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:clickable="false"
+                android:drawableStart="@drawable/ic_arrow_forward_black_24dp"
+                android:enabled="true"
+                android:focusable="false" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

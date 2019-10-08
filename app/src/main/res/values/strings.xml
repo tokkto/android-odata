@@ -1,0 +1,20 @@
+<resources  xmlns:tools="http://schemas.android.com/tools"
+             tools:ignore="MissingTranslation" >
+    <string name="application_name">App Colsub Fonninez</string>
+    <string name="eset_acuerdo">Acuerdo</string>
+    <string name="eset_acuerdo_single">AcuerdoType</string>
+    <string name="eset_asistencia">Asistencia</string>
+    <string name="eset_asistencia_single">AsistenciaType</string>
+    <string name="eset_businesspartner">BusinessPartner</string>
+    <string name="eset_businesspartner_single">BusinessPartnerType</string>
+    <string name="eset_mediador">Mediador</string>
+    <string name="eset_mediador_single">MediadorType</string>
+    <string name="eset_motivo">Motivo</string>
+    <string name="eset_motivo_single">MotivoType</string>
+    <string name="eset_operacion">Operacion</string>
+    <string name="eset_operacion_single">OperacionType</string>
+    <string name="eset_programa">Programa</string>
+    <string name="eset_programa_single">ProgramaType</string>
+    <string name="eset_sesionprogramada">SesionProgramada</string>
+    <string name="eset_sesionprogramada_single">SesionProgramadaType</string>
+</resources>
